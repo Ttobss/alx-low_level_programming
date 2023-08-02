@@ -1,24 +1,24 @@
 #include "main.h"
 
 /**
- * factorial - finds factorial
- * @n: int
- * Return: int
+ * _pow_recursion - Search a string for any of a set of bytes.
+ * @x: base
+ * @y: exposant
+ * Return: Pointer to the byte in `s` that matches one of the bytes in `accept`
+ * or NULL if no such byte is found.
  */
 
-int factorial(int n)
+int _pow_recursion(int x, int y)
 {
 
-	if (n < 0)
-	{
+	if (y < 0)
 		return (-1);
-	}
-	else if (n == 0)
-	{
+	else if (y == 1)
+		return (x);
+	else if (y == 0)
 		return (1);
-	}
 
-	return (n * factorial(n - 1));
+	return (x * _pow_recursion(x, y - 1));
 
 }
 
